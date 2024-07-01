@@ -46,7 +46,7 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: build-artifacts
-        path: dist/pages-test/browser
+        path: dist/pages-test/browser/
 
   deploy:
     environment:
@@ -56,6 +56,11 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      - name: Download build artifacts
+        uses: actions/download-artifact@v3
+        with:
+          name: build-artifacts
+          path: dist/pages-test/browser/
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact
