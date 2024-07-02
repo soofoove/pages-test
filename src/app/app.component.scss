@@ -2,8 +2,16 @@
     height: 100%;
 }
 
-main {
+.main {
     display: flex;
     align-items: center;
     justify-content: center;
+
+    flex-direction: column;
+}
+
+.audio-container {
+    display: flex;
+
+    margin-top: 12px;
 }
